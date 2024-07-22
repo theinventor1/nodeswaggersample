@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info:
+  title: API con Swagger y Express
+  version: 1.0.0
+  description: Ejemplo de API con Swagger y Express
+
+paths:
+  /saludo:
+    get:
+      summary: Retorna un saludo simple
+      responses:
+        '200':
+          description: Saludo exitoso
+
+  '/usuario/{id}':
+    get:
+      summary: Retorna un usuario por su ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: ID del usuario a buscar
+      responses:
+        '200':
+          description: Usuario encontrado
+        '404':
+          description: Usuario no encontrado
